@@ -18,16 +18,25 @@ Eve Crafts Marketplace is a Flutter-based mobile app developed as part of a proj
 To run the app locally, follow these steps:
 
 1. Clone the repository to your local machine:
-  git clone <https://github.com/Ammad-Naseer/eve_crafts.git>
+   ```
+   git clone https://github.com/Ammad-Naseer/healthy_bites.git
+   ```
 
 2. Navigate to the project directory:
-   cd eve_crafts
+   ```
+   cd healthy_bites
+   ```
 
 3. Install dependencies using Flutter:
+   ```
    flutter pub get
+   ```
 
 4. Run the app on a simulator or physical device:
+   ```
    flutter run
+   ```
+
 
 ## Contributing
 
