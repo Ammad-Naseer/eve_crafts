@@ -49,10 +49,10 @@ For questions or inquiries about Eve Crafts Marketplace, please contact Ammad Na
 
 ## Screenshots
 
-| ![Home Screen](screenshots/home.png) | ![Cart Screen](screenshots/cart.png) |
-| :-----------------------------------: | :-----------------------------------: |
-| *Home Screen of Eve Crafts Marketplace with Featured Crafts* | *Cart page* |
+| ![Home Screen](screenshots/home.png) | ![Cart Screen](screenshots/cart.png) | ![Drawer](screenshots/drawer.png) |
+| :-----------------------------------: | :-----------------------------------: | :--------------------------------: |
+| *Home Screen of Eve Crafts Marketplace with Featured Crafts* | *Cart page* | *Drawer Menu* |
 
-| ![Drawer](screenshots/drawer.png) | ![Login Screen](screenshots/login.png) |
-| :--------------------------------: | :------------------------------------: |
-| *Drawer Menu* | *Login Screen* |
+| ![Login Screen](screenshots/login.png) |  |  |
+| :------------------------------------: | - | - |
+| *Login Screen* |  |  |
