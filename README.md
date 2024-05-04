@@ -49,6 +49,6 @@ For questions or inquiries about Eve Crafts Marketplace, please contact Ammad Na
 
 ## Screenshots
 
-| ![Home Screen](screenshots/home.png) | ![Cart Screen](screenshots/cart.png) | ![Drawer](screenshots/drawer.png) | ![Login Screen](screenshots/login.png) |
-| :-----------------------------------: | :-----------------------------------: | :--------------------------------: | :------------------------------------: |
+| <img src="screenshots/home.png" width="360" height="780"> | <img src="screenshots/cart.png" width="360" height="780"> | <img src="screenshots/drawer.png" width="360" height="780"> | <img src="screenshots/login.png" width="360" height="780"> |
+| :-------------------------------------------------------: | :-------------------------------------------------------: | :--------------------------------------------------------: | :-------------------------------------------------------: |
 | *Home Screen of Eve Crafts Marketplace with Featured Crafts* | *Cart page* | *Drawer Menu* | *Login Screen* |
