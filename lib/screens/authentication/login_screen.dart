@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:eve_crafts/services/authentication_service.dart';
 import 'package:eve_crafts/utils/toast.dart';
 import 'package:eve_crafts/widgets/custom_input_field.dart';
@@ -59,11 +61,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-                          AuthService().signInWithEmailAndPassword(
+                          await AuthService().signInWithEmailAndPassword(
                               emailController.text, passwordController.text);
-                          Navigator.pushReplacementNamed(context, '/');
+                          if (AuthService().isUserSignedIn()) {
+                            Navigator.pushReplacementNamed(context, '/');
+                          }
                         }
                       },
                       child: const Text('Login'),
@@ -136,9 +140,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () {
-                            AuthService().signInWithGoogle();
-                            Navigator.pushReplacementNamed(context, '/');
+                          onTap: () async {
+                            await AuthService().signInWithGoogle();
+                            if (AuthService().isUserSignedIn()) {
+                              Navigator.pushReplacementNamed(context, '/');
+                            }
                           },
                           child: Container(
                             width: 50,
@@ -159,16 +165,19 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(
                           width: 20,
                         ),
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 233, 244, 242),
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          child: const Icon(
-                            CupertinoIcons.phone,
-                            color: Colors.blueAccent,
+                        GestureDetector(
+                          onTap: () async {},
+                          child: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 233, 244, 242),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            child: const Icon(
+                              CupertinoIcons.phone,
+                              color: Colors.blueAccent,
+                            ),
                           ),
                         ),
                       ],

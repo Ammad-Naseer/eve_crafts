@@ -1,9 +1,12 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:eve_crafts/utils/toast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   Future<User?> signInWithEmailAndPassword(
       String email, String password) async {
@@ -51,33 +54,31 @@ class AuthService {
   // Sign in with Google
   Future<User?> signInWithGoogle() async {
     try {
-      // Create a new instance of the GoogleSignIn class
-      final GoogleSignIn googleSignIn = GoogleSignIn();
+      await googleSignIn.signOut();
 
-      // Prompt the user to select a Google account
       final GoogleSignInAccount? googleSignInAccount =
           await googleSignIn.signIn();
 
-      // Retrieve the authentication credentials
-      final GoogleSignInAuthentication googleAuth =
-          await googleSignInAccount!.authentication;
+      if (googleSignInAccount == null) {
+        Utils().toastMessage('Google sign-in cancelled');
+        return null;
+      }
 
-      // Create a new instance of the AuthCredential class using the Google authentication credentials
+      final GoogleSignInAuthentication googleAuth =
+          await googleSignInAccount.authentication;
+
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
 
-      // Sign in to Firebase using the AuthCredential
       UserCredential userCredential =
           await _auth.signInWithCredential(credential);
 
-      // Display a success message
       Utils().toastMessage('Google sign-in successful');
 
       return userCredential.user;
     } catch (error) {
-      // Handle any errors that occur during the sign-in process
       Utils().toastMessage('Error signing in with Google');
       return null;
     }
@@ -86,7 +87,18 @@ class AuthService {
   // Sign out
   Future<void> signOut() async {
     try {
-      await _auth.signOut();
+      User? user = getCurrentUser();
+
+      if (user != null) {
+        bool isGoogleSignIn =
+            user.providerData.any((info) => info.providerId == 'google.com');
+
+        if (isGoogleSignIn) {
+          googleSignIn.signOut;
+        } else {
+          await _auth.signOut();
+        }
+      }
     } catch (error) {
       Utils().toastMessage('Error signing out');
     }
