@@ -1,6 +1,7 @@
 import 'package:eve_crafts/services/authentication_service.dart';
 import 'package:eve_crafts/utils/toast.dart';
 import 'package:eve_crafts/widgets/custom_input_field.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -90,6 +91,84 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 decoration: TextDecoration.underline),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Divider(
+                            color: Colors.black54,
+                            thickness: 1,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Or Continue With',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Divider(
+                            color: Colors.black54,
+                            thickness: 1,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            AuthService().signInWithGoogle();
+                            Navigator.pushReplacementNamed(context, '/');
+                          },
+                          child: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 233, 244, 242),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            child: Transform.scale(
+                              scale: 0.5,
+                              child: Image.asset(
+                                'assets/google.png',
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 233, 244, 242),
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: const Icon(
+                            CupertinoIcons.phone,
+                            color: Colors.blueAccent,
                           ),
                         ),
                       ],

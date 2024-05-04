@@ -5,12 +5,11 @@ class SellerProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Example seller data
     Seller seller = Seller(
-      name: 'Jane Doe',
-      email: 'jane@example.com',
-      rating: 4.5,
-      imageUrl: 'assets/images/seller_profile.jpg',
+      name: 'Ammad Naseer',
+      email: 'Ammad@evecraft.com',
+      rating: 4.7,
+      imageUrl: 'assets/hand-made.png',
     );
 
     return Scaffold(
@@ -19,29 +18,32 @@ class SellerProfileScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage(seller.imageUrl),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Name: ${seller.name}',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Email: ${seller.email}',
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Rating: ${seller.rating.toString()}',
-              style: const TextStyle(fontSize: 16),
-            ),
-          ],
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage(seller.imageUrl),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Name: ${seller.name}',
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                'Email: ${seller.email}',
+                style: const TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                'Rating: ${seller.rating.toString()}',
+                style: const TextStyle(fontSize: 16),
+              ),
+            ],
+          ),
         ),
       ),
     );

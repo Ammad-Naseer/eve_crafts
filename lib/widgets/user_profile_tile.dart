@@ -6,7 +6,8 @@ class UserProfileTile extends StatelessWidget {
   final String profileImageUrl;
   final VoidCallback onTap;
 
-  UserProfileTile({
+  const UserProfileTile({
+    super.key,
     required this.name,
     required this.email,
     required this.profileImageUrl,

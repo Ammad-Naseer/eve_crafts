@@ -12,6 +12,7 @@ class EditProfileScreen extends StatefulWidget {
 class _EditProfileScreenState extends State<EditProfileScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +47,21 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               ),
             ),
             const SizedBox(height: 20),
+            const Text(
+              'Password:',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextField(
+              controller: _passwordController,
+              decoration: const InputDecoration(
+                hintText: 'Enter your password',
+              ),
+            ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // TODO: Implement update profile logic
                 // Retrieve new name and email from controllers (_nameController.text, _emailController.text)
+                Navigator.pushNamed(context, '/');
               },
               child: const Text('Save Changes'),
             ),

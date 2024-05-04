@@ -7,9 +7,9 @@ class UserProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Example user data
     User user = User(
-      name: 'John Doe',
-      email: 'john@example.com',
-      profileImage: 'assets/images/profile.jpg',
+      name: 'Ammad Naseer',
+      email: 'ammad@evecrafts.com',
+      profileImage: 'assets/hand-made.png',
     );
 
     return Scaffold(
@@ -18,32 +18,35 @@ class UserProfileScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage(user.profileImage),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              user.name,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              user.email,
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the edit profile screen
-                Navigator.pushNamed(context, '/editProfile');
-              },
-              child: const Text('Edit Profile'),
-            ),
-          ],
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage(user.profileImage),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                user.name,
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                user.email,
+                style: const TextStyle(fontSize: 16, color: Colors.grey),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the edit profile screen
+                  Navigator.pushNamed(context, '/editProfile');
+                },
+                child: const Text('Edit Profile'),
+              ),
+            ],
+          ),
         ),
       ),
     );

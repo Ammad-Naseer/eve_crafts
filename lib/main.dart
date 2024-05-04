@@ -1,9 +1,11 @@
 import 'package:eve_crafts/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 import 'routes.dart';
 
 void main() async {
+  await PersistentShoppingCart().init();
   // Initialize Firebase
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: routes,
     );
   }
