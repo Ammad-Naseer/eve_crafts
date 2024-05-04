@@ -18,8 +18,8 @@ Eve Crafts Marketplace is a Flutter-based mobile app developed as part of a proj
 To run the app locally, follow these steps:
 
 1. Clone the repository to your local machine:
-  git clone https://github.com/Ammad-Naseer/eve_crafts.git
- 
+  git clone <https://github.com/Ammad-Naseer/eve_crafts.git>
+
 2. Navigate to the project directory:
    cd eve_crafts
 
@@ -45,6 +45,18 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or inquiries about Eve Crafts Marketplace, please contact Ammad Naseer at ammad.naseer33@gmail.com.
- 
+For questions or inquiries about Eve Crafts Marketplace, please contact Ammad Naseer at <ammad.naseer33@gmail.com>.
 
+## Screenshots
+
+![Home Screen](screenshots/home.png)
+*Home Screen of Eve Crafts Marketplace with Featured Crafts*
+
+![Cart Screen](screenshots/cart.png)
+*Cart page*
+
+![Drawer](screenshots/drawer.png)
+*Drawer Menu*
+
+![Login Screen](screenshots/login.png)
+*Login Screen*
